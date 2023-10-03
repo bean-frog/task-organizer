@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task organizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.8.3/full.css" integrity="sha512-O+Fc80nw5NdS/UwWk8ZQIpJbqYV7qQH6s1E1DwAgJmYwW0AE2liPFEgisBFRfzEfnKCPm3m++Yh04eR9JGk6nA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="p-8 text-2xl font-bold text-black bg-gray-300">task organizer thing idk</div>
+    
+      <div id="modal" class="invisible flex fixed inset-0 z-50 justify-center items-center">
+        <div class="fixed inset-0 bg-black opacity-50 modal-overlay"></div>
+        <div class="z-50 p-4 mx-auto bg-white rounded shadow-lg w-fit modal-container">
+            <button id="close-modal" class="absolute top-2 text-4xl right-2 btn btn-ghost">&#10005;</button>
+            <div class="p-4 bg-white">
+                <h2 class="mb-2 text-xl font-bold">Create New Task</h2>
+                <div class="flex flex-row">
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-semibold text-black">Task Info</h3>
+                        <input class="p-2 m-2 text-black bg-gray-100 rounded-md shadow-md" name="title" id="titleInput" placeholder="Task Name...">
+                        <input class="p-2 m-2 text-black bg-gray-100 rounded-md shadow-md" name="description" id="descInput" placeholder="Task Description...">
+                    </div>
+                    <div class="flex flex-col ml-6">
+                        <h3 class="text-lg font-semibold text-black">Task Style</h3>
+                        <h3 class="text-md text-black">Icon</h3>
+                        <select id="icon-sel">
+                            <!-- Icons are dynamically appended here. The selected one can be gotten using iconSel.value -->
+                        </select>
+                        <p class='m-4 text-5xl'>
+                            <i id="icon-display"></i>
+                        </p>
+                        <h3 class="text-md text-black">Border Color</h3>
+                        <input type="color" id="colorPicker" value="#242526">
+                    </div>
+                </div>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" id="createTaskBtn">Create</button>
+            </div>
+            
+             
+        </div>
+      </div>
+      <div class="flex flex-row">
+        <div class="p-4 m-4 w-1/5 h-screen bg-gray-300 rounded-md">
+            <button id="add-task" class="px-4 py-2 text-black text-xl font-bold btn btn-ghost">Add Task</button>
+            <button id="clear-all" class="px-4 py-2 text-black text-xl font-bold btn btn-ghost" onclick="clearAllTasks()">Clear Tasks</button>
+          <h1 class="mt-16 px-4 py-2 text-black text-2xl font-bold">Stats</h1>
+            <h2 class="px-4 py-2 text-black text-xl">Total Tasks:<span class="font-bold" id="total-tasks"></span></h2>
+            <h2 class="px-4 py-2 text-black text-xl">Completed:<span class="font-bold" id="completed-tasks"></span></h2>
+            <h2 class="px-4 py-2 text-black text-xl">Percent Completed:<span class="font-bold" id="percent-completed"></span></h2>
+        </div>
+        <div id="card-area" class="w-4/5 m-4 flex items-stretch flex-wrap">
+        </div>
+        </div>
+</body>
+<script src="app.js"></script>
+</html>
