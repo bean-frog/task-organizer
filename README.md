@@ -11,3 +11,4 @@ most of this was made while tired so the code is terrible
 - atrocious amount of vertical spacing. i tried for ~45 min to fix but idk why its there still
 - no dark mode (yet)
 - doesnt save checkbox state
+- forgot to make the trash button work, its all or nothing for now
