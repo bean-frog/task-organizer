@@ -74,7 +74,8 @@ createTaskBtn.addEventListener('click', () => {
         title: titleInput.value,
         desc: descInput.value,
         iconClass: iconSel.value,
-        cardBorderColor: colorPicker.value
+        cardBorderColor: colorPicker.value,
+        checked: false
     };
     tasks.push(newTask);
     localStorage.setItem('tasks', JSON.stringify(tasks));
